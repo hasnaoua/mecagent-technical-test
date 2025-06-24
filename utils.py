@@ -1,25 +1,8 @@
-from datasets import load_dataset
 import matplotlib.pyplot as plt
 from typing import List
 import random
 
 
-def load_data(dataset_path: str = "CADCODER/GenCAD-Code") -> dict:
-    """
-    Loads the specified dataset using the Hugging Face datasets library.
-
-    Args:
-        dataset_path (str): Path or identifier of the dataset.
-
-    Returns:
-        dict: A dictionary containing train and test splits.
-    """
-    ds = load_dataset(
-        dataset_path,
-        num_proc=16,
-        split=["train", "test"],
-    )
-    return ds
 
 
 def plot_samples(dataset: List[dict], samples_count: int = 5, randomize: bool = False) -> None:
